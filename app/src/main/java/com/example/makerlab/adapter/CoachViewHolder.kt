@@ -1,4 +1,4 @@
-package com.example.makerlab
+package com.example.makerlab.adapter
 
 import android.view.View
 import android.widget.TextView

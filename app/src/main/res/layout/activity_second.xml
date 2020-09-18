@@ -12,7 +12,7 @@
         android:text="Segunda Vista"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/rvList"

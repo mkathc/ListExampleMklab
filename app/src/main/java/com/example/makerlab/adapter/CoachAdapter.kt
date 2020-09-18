@@ -1,10 +1,12 @@
-package com.example.makerlab
+package com.example.makerlab.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.makerlab.ui.model.Coach
+import com.example.makerlab.R
 import kotlinx.android.synthetic.main.row_coach.view.*
 
 class CoachAdapter : RecyclerView.Adapter<CoachViewHolder>(){
