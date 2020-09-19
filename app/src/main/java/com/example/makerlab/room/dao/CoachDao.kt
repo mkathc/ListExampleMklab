@@ -9,7 +9,6 @@ import com.example.makerlab.room.entity.CoachEntity
 
 @Dao
 interface CoachDao {
-
     @Query("SELECT * from coach")
     fun getCoaches(): LiveData<List<CoachEntity>>
 
