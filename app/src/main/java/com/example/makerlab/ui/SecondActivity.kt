@@ -36,16 +36,23 @@ class SecondActivity : AppCompatActivity() {
 
     private fun observerCoachList() {
         coachViewModel.allCoaches.observe(this, Observer { coach ->
+
             if (coach.isNotEmpty()) {
+
                 val newList = mutableListOf<Coach>()
+
                 coach.forEach {
                     newList.add(coachViewMapper.mapToView(it))
                 }
+
                 setRecyclerView(newList)
+
             } else {
+
                 getListCoach().forEach {
                     coachViewModel.insert(it)
                 }
+
             }
         })
     }
