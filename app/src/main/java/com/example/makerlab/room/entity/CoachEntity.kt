@@ -10,5 +10,6 @@ data class CoachEntity(
     @ColumnInfo(name = "id")
     val id: Int,
     val name: String,
+    val apellido: String,
     val description: String
 )

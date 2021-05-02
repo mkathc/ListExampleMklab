@@ -24,7 +24,6 @@ class CoachViewModel (application: Application): AndroidViewModel(application){
         allCoaches = repository.allCoaches
     }
 
-
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */

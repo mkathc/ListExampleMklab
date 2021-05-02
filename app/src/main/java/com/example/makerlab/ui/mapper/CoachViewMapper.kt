@@ -8,7 +8,9 @@ class CoachViewMapper : CoachMapper<Coach, CoachEntity> {
 
     override fun mapToView(type: CoachEntity): Coach {
         return Coach(
+            type.name + type.apellido,
             type.name,
+            type.apellido,
             type.description
         )
     }
@@ -17,6 +19,7 @@ class CoachViewMapper : CoachMapper<Coach, CoachEntity> {
         return CoachEntity(
             0,
             type.name,
+            type.apellido,
             type.description
         )
     }

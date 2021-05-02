@@ -8,7 +8,7 @@ import com.example.makerlab.room.dao.CoachDao
 import com.example.makerlab.room.entity.CoachEntity
 import com.example.makerlab.ui.model.Coach
 
-@Database(entities = arrayOf(CoachEntity::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(CoachEntity::class), version = 2, exportSchema = false)
 public abstract class CoachRoomDatabase : RoomDatabase() {
 
     abstract fun coachDao(): CoachDao

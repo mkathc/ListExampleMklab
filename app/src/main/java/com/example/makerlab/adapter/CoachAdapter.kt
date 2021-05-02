@@ -24,7 +24,7 @@ class CoachAdapter : RecyclerView.Adapter<CoachViewHolder>(){
 
     override fun onBindViewHolder(holder: CoachViewHolder, position: Int) {
        val coach = listCoach[position]
-        holder.name.text = coach.name
+        holder.name.text = coach.nameComplete
         holder.description.text = coach.description
     }
 

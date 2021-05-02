@@ -21,7 +21,9 @@ const val TITLE = "TITULO"
 class SecondActivity : AppCompatActivity() {
 
     private val coachAdapter = CoachAdapter()
+
     private lateinit var coachViewModel: CoachViewModel
+
     private val coachViewMapper = CoachViewMapper()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +32,9 @@ class SecondActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val title = intent.getStringExtra(TITLE)
         textView2.text = title
+
         coachViewModel = ViewModelProvider(this).get(CoachViewModel::class.java)
+
         observerCoachList()
     }
 
@@ -65,22 +69,38 @@ class SecondActivity : AppCompatActivity() {
 
     private fun getListCoach(): List<Coach> {
         val list = mutableListOf<Coach>()
-        list.add(Coach("Kath", "Coach mobile"))
+
+        list.add(Coach("",
+            "Mary",
+            "Mateus",
+            "Coach ux"))
+
+        list.add(Coach("",
+            "Kath",
+            "Caillahua",
+            "Coach mobile"))
+
         list.add(
             Coach(
+                "",
                 "Carlos",
+                "Gomez",
                 "Coach videoGames"
             )
         )
         list.add(
             Coach(
+                "",
                 "Pedro",
+                "Gomez",
                 "Coach Full stack"
             )
         )
         list.add(
             Coach(
+                "",
                 "Pablo",
+                "Gomez",
                 "Coach Full stack"
             )
         )
