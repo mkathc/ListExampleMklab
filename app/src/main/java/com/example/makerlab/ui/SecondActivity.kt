@@ -8,13 +8,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.makerlab.ui.model.Coach
 import com.example.makerlab.R
-import com.example.makerlab.adapter.CoachAdapter
-import com.example.makerlab.room.CoachRepository
-import com.example.makerlab.room.CoachRoomDatabase
-import com.example.makerlab.room.entity.CoachEntity
+import com.example.makerlab.retrofit.CocktailModel
+import com.example.makerlab.ui.adapter.CoachAdapter
+import com.example.makerlab.ui.adapter.CocktailAdapter
 import com.example.makerlab.ui.mapper.CoachViewMapper
 import kotlinx.android.synthetic.main.activity_second.*
-import kotlinx.coroutines.coroutineScope
 
 const val TITLE = "TITULO"
 
@@ -23,6 +21,8 @@ class SecondActivity : AppCompatActivity() {
     private val coachAdapter = CoachAdapter()
 
     private lateinit var coachViewModel: CoachViewModel
+
+    private val cocktailAdapter = CocktailAdapter()
 
     private val coachViewMapper = CoachViewMapper()
 
@@ -36,6 +36,7 @@ class SecondActivity : AppCompatActivity() {
         coachViewModel = ViewModelProvider(this).get(CoachViewModel::class.java)
 
         observerCoachList()
+        observerCocktailList()
     }
 
     private fun observerCoachList() {
@@ -61,10 +62,33 @@ class SecondActivity : AppCompatActivity() {
         })
     }
 
+
+    private fun observerCocktailList() {
+        coachViewModel.allCocktail.observe(this, Observer { cocktail ->
+
+            if (cocktail.isNotEmpty()) {
+
+                setRecyclerViewCocktail(cocktail)
+
+            } else {
+
+               Toast.makeText(this, "No se pudo descargar la información", Toast.LENGTH_SHORT).show()
+
+            }
+        })
+        coachViewModel.getCocktail()
+    }
+
     private fun setRecyclerView(list: List<Coach>) {
         rvList.layoutManager = LinearLayoutManager(applicationContext)
         rvList.adapter = coachAdapter
         coachAdapter.setListCoach(list)
+    }
+
+    private fun setRecyclerViewCocktail(list: List<CocktailModel>) {
+        rvList.layoutManager = LinearLayoutManager(applicationContext)
+        rvList.adapter = cocktailAdapter
+        cocktailAdapter.setListCoach(list)
     }
 
     private fun getListCoach(): List<Coach> {

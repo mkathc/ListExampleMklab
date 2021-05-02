@@ -1,4 +1,4 @@
-package com.example.makerlab.adapter
+package com.example.makerlab.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
